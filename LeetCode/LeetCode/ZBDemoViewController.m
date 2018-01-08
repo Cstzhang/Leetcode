@@ -7,7 +7,7 @@
 //
 
 #import "ZBDemoViewController.h"
-
+#import "LeetCode-Swift.h"
 @interface ZBDemoViewController ()
 
 @end
@@ -16,6 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self leetCodeTwoSum];
+}
+
+- (void)leetCodeTwoSum{
+    TwoSum * twoSum = [[TwoSum alloc] init];
+    NSArray * testArray = @[@2,@3,@4,@5,@6];
+    NSArray * re = [twoSum twoSum:testArray :8];
+    NSLog(@"%@", re);
 }
 
 

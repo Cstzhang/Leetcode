@@ -92,7 +92,7 @@ initialization UI
  */
 - (NSArray *)designPatterns{
     if (!_designPatterns) {
-        _designPatterns = @[@"Two Sum",@"test1",@"test2",@"test3",@"test4",@"test5"];
+        _designPatterns = @[@"Two Sum",@"Add Two Numbers",@"test2",@"test3",@"test4",@"test5"];
     }
     return _designPatterns;
 }
