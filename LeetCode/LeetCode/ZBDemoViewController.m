@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self leetCodeTwoSum];
+    [self addTwoNumbers];
 }
 
 - (void)leetCodeTwoSum{
@@ -26,6 +26,14 @@
     NSLog(@"%@", re);
 }
 
+- (void)addTwoNumbers{
+    AddTwoNumbers *  addTwoNumbers = [[AddTwoNumbers alloc] init];
+    ListNode * l1 = [[ListNode alloc] init:2];
+    NSLog(@"l1 : %@",l1);
+
+
+    
+}
 
 
 @end
