@@ -10,23 +10,49 @@ import Foundation
 
 
 
+class ListNode: NSObject {
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
+        self.val = val
+        self.next = nil
+    }
+     func desc()->String{
+        var ret:String = String(val)
+        var node = next
+        while node != nil {
+            ret = ret.appendingFormat("->%d", (node?.val)!)
+            node=node!.next
+        }
+        return ret
+    }
+    
+     func ListNodeCreate(str: String) ->ListNode {
+        // 字符串分割 "->"
+        let str:[String] = str.components(separatedBy: "->")
+        var list:ListNode = ListNode(-1)
+        let ret = list
+        for s in str {
+            list.next = ListNode(Int(s)!)
+            list=list.next!
+        }
+        return ret.next!
+    }
+}
+
 class AddTwoNumbers:NSObject{
     
-    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+    func addTwoNumbers(l1: ListNode?, l2: ListNode?) -> ListNode? {
         if l1 == nil {
             return l2
         }
-        
         if l2 == nil {
             return l1
         }
-        
         var headNode:ListNode?
-        
         var head1:ListNode? = l1
         var head2:ListNode? = l2
         var carry:Int = 0
-        
         while head1 != nil {
             
             let value:Int = (head1?.val)! + (head2?.val)! + carry
