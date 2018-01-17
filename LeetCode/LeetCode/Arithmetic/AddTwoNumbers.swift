@@ -17,7 +17,11 @@ class ListNode: NSObject {
         self.val = val
         self.next = nil
     }
-     func desc()->String{
+    
+    /// show listNode desc
+    ///
+    /// - Returns: listNode desc
+    func desc()->String{
         var ret:String = String(val)
         var node = next
         while node != nil {
@@ -27,7 +31,11 @@ class ListNode: NSObject {
         return ret
     }
     
-     func ListNodeCreate(str: String) ->ListNode {
+     /// create a listNode with string
+     ///
+     /// - Parameter str: string like "1->2->3"
+     /// - Returns: listNode
+    func ListNodeCreate(str: String) ->ListNode {
         // 字符串分割 "->"
         let str:[String] = str.components(separatedBy: "->")
         var list:ListNode = ListNode(-1)
@@ -43,51 +51,38 @@ class ListNode: NSObject {
 class AddTwoNumbers:NSObject{
     
     func addTwoNumbers(l1: ListNode?, l2: ListNode?) -> ListNode? {
-        if l1 == nil {
-            return l2
+        let dummyHead:ListNode = ListNode.init(0)
+        var l1 = l1
+        var l2 = l2
+        if l1 == nil && l2 == nil {
+            return dummyHead
         }
-        if l2 == nil {
-            return l1
-        }
-        var headNode:ListNode?
-        var head1:ListNode? = l1
-        var head2:ListNode? = l2
+        var sum:Int = 0
         var carry:Int = 0
-        while head1 != nil {
-            
-            let value:Int = (head1?.val)! + (head2?.val)! + carry
-            
-            let listNode:ListNode? = ListNode(value % 10)
-            
-            if headNode == nil {
-                headNode = listNode
-            } else {
-                var nextNode:ListNode? = headNode
-                while nextNode?.next != nil {
-                    nextNode = nextNode?.next
-                }
-                nextNode?.next = listNode
-            }
-            carry = value / 10
-            head1 = head1?.next
-            head2 = head2?.next
+        var curr:ListNode = dummyHead
+        while l1 != nil || l2 != nil {
+            let num1 = l1 == nil ? 0 : l1?.val
+            let num2 = l2 == nil ? 0 : l2?.val
+            sum = num1! + num2! + carry
+            curr.next = ListNode.init(sum % 10)
+            curr = curr.next!
+            carry = sum / 10
+            l1 = l1 == nil ? nil : l1?.next
+            l2 = l2 == nil ? nil : l2?.next
         }
-        
-        return headNode
+        if carry != 0 {
+            curr.next = ListNode.init(carry)
+        }
+        return dummyHead.next
     }
     /*
-     本题要求将以链表存储的两个整数相加，求和的结果依然存储在一个链表中，最后返回结果链表的头指针。
-     
-     题目的难点在于
-     
-     1. 两个整数逆序存储，低位向高位有进位时不再是向前而是向后进位。
-     
-     2. 两个整数不一定有相同的位数，所以遍历链表时要判断是否遍历结束，如果结束，就将其相应位置为0。
-     
-     3. 两个整数的最高位相加可能产生进位。
-     
-     综上考虑，应创建一个新的链表，其头节点为head,指向其的头指针为p,用carry表示对应位相加后的进位，sum表示相加后结果。
-
+     You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+     Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+     Output: 7 -> 0 -> 8
+     需要注意以下几点：
+     1.因为存储是反过来的，即数字342存成2->4->3，所以要注意进位是向后的；
+     2.链表l1或l2为空时，直接返回，这是边界条件，省掉多余的操作；
+     3.链表l1和l2长度可能不同，因此要注意处理某个链表剩余的高位；
+     4.2个数相加，可能会产生最高位的进位，因此要注意在完成以上1－3的操作后，判断进位是否为0，不为0则需要增加结点存储最高位的进位。
      */
-    
 }
