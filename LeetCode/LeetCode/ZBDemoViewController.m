@@ -31,7 +31,7 @@
     ListNode * l1 = [[ListNode alloc]ListNodeCreateWithStr:@"2->4->3"];
     ListNode * l2 = [[ListNode alloc]ListNodeCreateWithStr:@"5->6->4"];
     ListNode * l3 = [add addTwoNumbersWithL1:l1 l2:l2];
-    NSLog(@"l1 : %@",l3.desc);
+    NSLog(@"return listNode : %@",l3.desc);
 
 }
 

@@ -51,6 +51,8 @@ class ListNode: NSObject {
 class AddTwoNumbers:NSObject{
     
     func addTwoNumbers(l1: ListNode?, l2: ListNode?) -> ListNode? {
+        print(l1?.desc() ?? ListNode.init(0))
+        print(l2?.desc() ?? ListNode.init(0))
         let dummyHead:ListNode = ListNode.init(0)
         var l1 = l1
         var l2 = l2
