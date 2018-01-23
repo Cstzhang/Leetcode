@@ -59,7 +59,7 @@ initialization UI
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"did select row at indexPath: %lu",indexPath.row);
+   // NSLog(@"did select row at indexPath: %lu",indexPath.row);
     
     ZBDemoViewController *demoVC = [ [ZBDemoViewController alloc] init ];
     demoVC.title = _designPatterns[indexPath.row];
@@ -92,7 +92,7 @@ initialization UI
  */
 - (NSArray *)designPatterns{
     if (!_designPatterns) {
-        _designPatterns = @[@"Two Sum",@"Add Two Numbers",@"test2",@"test3",@"test4",@"test5"];
+        _designPatterns = @[@"leetCodeTwoSum",@"addTwoNumbers",@"bubbleSort",@"test3",@"test4",@"test5"];
     }
     return _designPatterns;
 }
