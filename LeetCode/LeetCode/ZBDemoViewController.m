@@ -72,5 +72,11 @@
     [sort quicksort:arrToSort :0 :arrToSort.count -1];
 }
 
+- (void)insertionSort{
+    NSLog(@"-----bubbleSort-----");
+    NSArray * arrToSort = @[@3,@7,@1,@9,@11,@18,@4,@99,@2,@8];
+    InsertionSort *sort = [[InsertionSort alloc] init];
+    NSLog(@"sort result :%@", [sort insertionSort:arrToSort].description);
+}
 
 @end
