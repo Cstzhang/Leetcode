@@ -63,9 +63,13 @@
     NSArray * arrToSort = @[@3,@7,@1,@9,@11,@18,@1,@99,@2,@8];
     BubbleSort *sort = [[BubbleSort alloc] init];
     NSLog(@"sort result :%@", [sort bubbleSort:arrToSort].description);
-    
-    
-    
+}
+
+- (void)quicksort{
+    NSLog(@"-----bubbleSort-----");
+    NSArray * arrToSort = @[@3,@7,@1,@9,@11,@18,@4,@99,@2,@8];
+    Quicksort *sort = [[Quicksort alloc] init];
+    [sort quicksort:arrToSort :0 :arrToSort.count -1];
 }
 
 

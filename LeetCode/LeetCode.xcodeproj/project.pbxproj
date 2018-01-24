@@ -16,6 +16,7 @@
 		6D027F132003A640003F9E11 /* ZBDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D027F122003A640003F9E11 /* ZBDemoViewController.m */; };
 		6D027F162003A736003F9E11 /* TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D027F152003A736003F9E11 /* TwoSum.swift */; };
 		6D027F192003BCD8003F9E11 /* AddTwoNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D027F182003BCD8003F9E11 /* AddTwoNumbers.swift */; };
+		6DD0BF782018BB740050134F /* Quicksort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD0BF772018BB740050134F /* Quicksort.swift */; };
 		E0BE4A102016DCB20077D013 /* BubbleSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BE4A0F2016DCB20077D013 /* BubbleSort.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		6D027F142003A735003F9E11 /* LeetCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeetCode-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D027F152003A736003F9E11 /* TwoSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSum.swift; sourceTree = "<group>"; };
 		6D027F182003BCD8003F9E11 /* AddTwoNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTwoNumbers.swift; sourceTree = "<group>"; };
+		6DD0BF772018BB740050134F /* Quicksort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quicksort.swift; sourceTree = "<group>"; };
 		E0BE4A0F2016DCB20077D013 /* BubbleSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				6D027F152003A736003F9E11 /* TwoSum.swift */,
 				6D027F182003BCD8003F9E11 /* AddTwoNumbers.swift */,
 				E0BE4A0F2016DCB20077D013 /* BubbleSort.swift */,
+				6DD0BF772018BB740050134F /* Quicksort.swift */,
 			);
 			path = Arithmetic;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				6D027F0B2003A5E6003F9E11 /* main.m in Sources */,
 				E0BE4A102016DCB20077D013 /* BubbleSort.swift in Sources */,
 				6D027EFD2003A5E6003F9E11 /* AppDelegate.m in Sources */,
+				6DD0BF782018BB740050134F /* Quicksort.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

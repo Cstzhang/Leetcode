@@ -92,7 +92,7 @@ initialization UI
  */
 - (NSArray *)designPatterns{
     if (!_designPatterns) {
-        _designPatterns = @[@"leetCodeTwoSum",@"addTwoNumbers",@"bubbleSort",@"test3",@"test4",@"test5"];
+        _designPatterns = @[@"leetCodeTwoSum",@"addTwoNumbers",@"bubbleSort",@"quicksort",@"test4",@"test5"];
     }
     return _designPatterns;
 }
