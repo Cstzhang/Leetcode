@@ -9,6 +9,7 @@
 import UIKit
 
 class InsertionSort: NSObject {
+    let a = 2
     func insertionSort(_ array: [Int]) -> [Int] {
         var arr = array                           // 1
         for x in 1..<arr.count {                  // 2
@@ -20,4 +21,9 @@ class InsertionSort: NSObject {
         }
         return arr
     }
+
+
+    
+    
+   
 }
