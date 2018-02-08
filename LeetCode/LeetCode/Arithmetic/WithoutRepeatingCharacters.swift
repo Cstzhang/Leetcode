@@ -50,29 +50,27 @@ class WithoutRepeatingCharacters: NSObject {
 //            return maxLenth
 //        }
     
-    func lengthOfLongestSubstring(_ s: String) -> Int {
-        var letterAppearedDict = [Character:Int]()
-        var maxLenth = 0
-        var currentLenth = 0
-        var chars = Array(s)
-        for index in 0..<chars.count {
-            let char = chars[index]
-            if letterAppearedDict[char] == nil{
-                letterAppearedDict[char] = index
-                currentLenth += 1
-            }else{
-                let previousIndex = letterAppearedDict[char]!
-                for clearIndex in index - currentLenth..<previousIndex{
-                    letterAppearedDict[chars[clearIndex]] = nil
-                }
-                letterAppearedDict[char] = index
-                currentLenth = index - previousIndex
-            }
-            maxLenth = max(maxLenth, currentLenth)
-        }
-        return maxLenth
-    }
 
+    // 666
+    func lengthOfLongestSubstring(_ s: String) -> Int {
+        let array = Array(s.utf8)
+        var length = 0
+        var start = 0, end = 0
+        var i = 0
+        while end < array.count {
+            i = start
+            while i < end {
+                if array[i] == array[end] {
+                    start = i + 1
+                    break
+                }
+                i += 1
+            }
+            length = max(length, end - start + 1)
+            end += 1
+        }
+        return length
+    }
     
     //理解错了不是简单的去重，而是找出最长的没有重复字符的子字符串的长度
 //    func lengthOfLongestSubstring(_ s: String) -> Int {
