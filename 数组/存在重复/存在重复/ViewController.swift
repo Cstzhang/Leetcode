@@ -64,32 +64,32 @@ class ViewController: UIViewController {
 //    }
     
     //排序
-//    func containsDuplicate(_ nums: [Int]) -> Bool {
-//        if nums.isEmpty || nums.count == 1 {
-//            return false
-//        }
-//        
-//        let nums = nums.sorted()
-//        
-//        for i in 0..<nums.count - 1 {
-//            if nums[i] == nums[i + 1] {
-//                return true
-//            }
-//        }
-//        return false
-//    }
-    
-    //哈希表
     func containsDuplicate(_ nums: [Int]) -> Bool {
-        for i in 0..<nums.count {
-            if let _ = dic[nums[i]] {
+        if nums.isEmpty || nums.count == 1 {
+            return false
+        }
+
+        let nums = nums.sorted()
+
+        for i in 0..<nums.count - 1 {
+            if nums[i] == nums[i + 1] {
                 return true
             }
-            dic[nums[i]] = i
         }
         return false
     }
     
+    //哈希表
+//    func containsDuplicate(_ nums: [Int]) -> Bool {
+//        for i in 0..<nums.count {
+//            if let _ = dic[nums[i]] {
+//                return true
+//            }
+//            dic[nums[i]] = i
+//        }
+//        return false
+//    }
+//
   
 //    func containsDuplicate(_ nums: [Int]) -> Bool {
 //       return nums.count != Set.init(nums).count
